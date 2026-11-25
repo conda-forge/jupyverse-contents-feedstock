@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.1.4"
+  version: "0.1.5"
 
 package:
   name: jupyverse-contents
@@ -9,7 +9,7 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/j/jupyverse-contents/jupyverse_contents-${{ version }}.tar.gz
-    sha256: 0c1a6e27edbdb6c5871a921c8965d4e0e82a21590e0e2a251ebb01a89960fb01
+    sha256: ad9b54ce125e7ddb7812faeb541d2d38cb0032797145834ff3e2ac10c07848b9
 
 build:
   noarch: python
@@ -35,7 +35,9 @@ tests:
   - python:
       imports: jupyverse_contents
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
 
 about:
   license: BSD-3-Clause
